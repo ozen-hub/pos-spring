@@ -13,7 +13,7 @@ import java.util.Date;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class userInstance {
+public class UserInstance {
     @Id
     @Column(name="instance_id", length = 80)
     private String instanceId;
