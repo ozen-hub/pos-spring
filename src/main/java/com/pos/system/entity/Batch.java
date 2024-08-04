@@ -38,4 +38,7 @@ public class Batch {
     @OneToMany(mappedBy = "batch")
     private Set<ProductHasBatch> batchData= new HashSet<>();
 
+    @OneToMany(mappedBy = "batch")
+    private Set<OrderItem> orderItems = new HashSet<>();
+
 }
