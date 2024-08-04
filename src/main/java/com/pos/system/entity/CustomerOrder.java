@@ -1,9 +1,6 @@
 package com.pos.system.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -47,4 +44,7 @@ public class CustomerOrder {
 
     @OneToMany(mappedBy = "customerOrder")
     private Set<OrderItem> orderItems = new HashSet<>();
+
+    @OneToOne(mappedBy = "customerOrder")
+    private Payment payment;
 }
