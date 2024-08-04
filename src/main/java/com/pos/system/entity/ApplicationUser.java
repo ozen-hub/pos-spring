@@ -20,14 +20,19 @@ public class ApplicationUser {
     private String userId;
 
     private String username;
+
     @Column(name = "full_name")
     private String fullName;
+
     @Column(name = "is_account_non_expired", columnDefinition = "TINYINT")
     private boolean isAccountNonExpired;
+
     @Column(name = "is_credentials_non_expired", columnDefinition = "TINYINT")
     private boolean isCredentialsNonExpired;
+
     @Column(name = "is_account_non_locked", columnDefinition = "TINYINT")
     private boolean isAccountNonLocked;
+
     @Column(name = "is_enabled", columnDefinition = "TINYINT")
     private boolean isEnabled;
 

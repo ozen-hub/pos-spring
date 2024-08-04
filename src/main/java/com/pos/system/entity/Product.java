@@ -21,27 +21,28 @@ public class Product {
     @Id
     @Column(name = "product_id",length = 80)
     private String productId;
+
     private String name;
 
     @Lob
     @Column(name="description")
     private Blob description;
+
     @Column(name="price", precision = 2)
     private BigDecimal price;
+
     private int quantity;
+
     @Column(name="created_date", columnDefinition = "DATETIME")
     private Date createdDate;
+
     @Column(name="last_update", columnDefinition = "DATETIME")
     private Date lastUpdate;
 
     @OneToMany(mappedBy = "product")
     private Set<ProductHasBatch> batchData= new HashSet<>();
 
-    /*@JoinTable(
-            name="product_has_batch",
-            joinColumns = @JoinColumn(name="product_id"),
-            inverseJoinColumns = @JoinColumn(name="batch_id")
-    )
-    private Set<Batch> batches = new HashSet<>();*/
+    @OneToMany(mappedBy = "product")
+    private Set<OrderItem> orderItems = new HashSet<>();
 
 }

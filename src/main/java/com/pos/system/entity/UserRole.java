@@ -21,8 +21,10 @@ public class UserRole {
     @Id
     @Column(name="role_id", length = 80)
     private String roleId;
+
     @Column(name="role", unique = true, nullable = false)
     private String role;
+
     @ManyToMany(mappedBy = "userRoles")
     private Set<ApplicationUser> applicationUsers= new HashSet<>();
 }

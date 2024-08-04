@@ -9,6 +9,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.math.BigDecimal;
 import java.sql.Blob;
 
 @Entity(name="loyalty_card")
@@ -20,18 +21,25 @@ public class LoyaltyCard {
     @Id
     @Column(name="card_id", length = 80)
     private String cardId;
+
     @Column(name="customer_name", length = 150)
     private String customerName;
+
     @Column(name="member_type", length = 20)
     private String memberType;// GOLD,SILVER
     @Lob
     @Column(name = "barcode", nullable = false)
     private Blob barcode;
+
     @Column(name="contact_number", length = 20)
-    private String contactNumber;
+    private String contactNumber;//3=300000
+
     @Column(name="email", length = 100)
     private String email;// email verification
+
+    @Column(name="credit_amount", precision = 2)
+    private BigDecimal creditAmount;
+
     @Column(name="is_verified", columnDefinition = "TINYINT")
     private boolean isVerified;
-
 }
