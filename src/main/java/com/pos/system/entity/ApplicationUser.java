@@ -45,4 +45,8 @@ public class ApplicationUser {
     @OneToMany(mappedBy = "createdBy")
     private Set<Batch> batch;
 
+    @OneToMany(mappedBy = "verifiedPerson")
+    private Set<Refund> refunds;
+
+
 }

@@ -8,6 +8,7 @@ import lombok.Setter;
 
 import java.math.BigDecimal;
 import java.util.Date;
+import java.util.Set;
 
 @Entity(name="payment")
 @Getter
@@ -37,4 +38,7 @@ public class Payment {
 
     @Column(name="transferred_excess", precision = 2)
     private BigDecimal TransferredExcess; //0
+
+    @OneToOne(mappedBy = "payment")
+    private Payment payment;
 }
