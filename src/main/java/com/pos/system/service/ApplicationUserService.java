@@ -1,4 +1,6 @@
 package com.pos.system.service;
 
-public interface ApplicationUserService {
+import org.springframework.security.core.userdetails.UserDetailsService;
+
+public interface ApplicationUserService extends UserDetailsService {
 }
