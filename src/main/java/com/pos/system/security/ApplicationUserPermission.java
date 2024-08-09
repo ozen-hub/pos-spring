@@ -1,4 +1,4 @@
-package com.pos.system.service;
+package com.pos.system.security;
 
 public enum ApplicationUserPermission {
     PRODUCT_READ("product:read"),
