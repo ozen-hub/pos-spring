@@ -21,6 +21,8 @@ public class ApplicationUser {
 
     private String username;
 
+    private String password;
+
     @Column(name = "full_name")
     private String fullName;
 
