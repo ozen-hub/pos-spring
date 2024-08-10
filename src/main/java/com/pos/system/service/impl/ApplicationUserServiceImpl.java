@@ -54,4 +54,12 @@ public class ApplicationUserServiceImpl implements ApplicationUserService {
                 grantedAuthorities
         );
     }
+
+    @Override
+    public void initializeUser() {
+        Optional<ApplicationUser> selectedUserData = userRepo.findByUsername("hasikasandaruwan.info@gmail.com");
+        if(selectedUserData.isPresent()){
+            throw
+        }
+    }
 }
