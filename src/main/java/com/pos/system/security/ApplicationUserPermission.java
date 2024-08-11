@@ -2,9 +2,9 @@ package com.pos.system.security;
 
 public enum ApplicationUserPermission {
     PRODUCT_READ("product:read"),
-    PRODUCT_WRITE("product:read"),
-    ORDER_READ("product:read"),
-    ORDER_WRITE("product:read");
+    PRODUCT_WRITE("product:write"),
+    ORDER_READ("order:read"),
+    ORDER_WRITE("order:write");
 
     private final String permission;
 

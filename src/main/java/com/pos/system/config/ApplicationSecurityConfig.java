@@ -33,13 +33,15 @@ public class ApplicationSecurityConfig extends WebSecurityConfiguration {
     private final SecretKey secretKey;
     private final JwtConfig jwtConfig;
 
-    public ApplicationSecurityConfig(PasswordEncoder passwordEncoder, ApplicationUserServiceImpl applicationUserService, SecretKey secretKey, JwtConfig jwtConfig) {
+    public ApplicationSecurityConfig(PasswordEncoder passwordEncoder, ApplicationUserServiceImpl applicationUserService,
+                                     SecretKey secretKey, JwtConfig jwtConfig) {
         this.passwordEncoder = passwordEncoder;
         this.applicationUserService = applicationUserService;
         this.secretKey = secretKey;
         this.jwtConfig = jwtConfig;
     }
 
+    @Bean
     public SecurityFilterChain securityFilterChain(
             HttpSecurity http, AuthenticationManager authenticationManager
     ) throws Exception {

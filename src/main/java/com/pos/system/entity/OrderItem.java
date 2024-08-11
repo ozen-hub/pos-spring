@@ -15,6 +15,9 @@ import java.math.BigDecimal;
 @NoArgsConstructor
 public class OrderItem {
     @Id
+    private String id;
+
+    @Id
     @ManyToOne
     @JoinColumn(name="customer_order_id")
     private CustomerOrder customerOrder;
@@ -27,7 +30,7 @@ public class OrderItem {
     @Id
     @ManyToOne
     @JoinColumn(name="batch")
-    private Product batch;
+    private Batch batch;
 
     @Column(name = "qty")
     private Integer qty;

@@ -30,7 +30,8 @@ public enum ApplicationUserRole {
     }
 
     public Set<SimpleGrantedAuthority> grantedAuthorities() {
-        Set<SimpleGrantedAuthority> permissions = getApplicationUserPermissions().stream().map(permission ->
+        Set<SimpleGrantedAuthority> permissions = getApplicationUserPermissions()
+                .stream().map(permission ->
                 new SimpleGrantedAuthority(permission.getPermission())
         ).collect(Collectors.toSet());
         permissions.add(
